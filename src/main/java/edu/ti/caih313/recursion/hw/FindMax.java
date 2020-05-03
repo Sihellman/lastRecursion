@@ -21,4 +21,19 @@ public class FindMax {
         }
         return retval;
     }
+    //the way that looks easier
+    public static int findMax2(int[] array, int startIndex, int endIndex){
+        int retval = 0;
+        if (array[startIndex] < array[endIndex]){
+            retval = array[endIndex];
+            findMax2(array, startIndex+1, endIndex);
+        }
+        else if(array[startIndex] == array[endIndex]){
+            retval = array[startIndex];
+        }
+        else{
+            findMax2(array, startIndex, endIndex-1);
+        }
+        return retval;
+    }
 }
